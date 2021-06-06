@@ -1,0 +1,44 @@
+<!DOCTYPE html> <html lang="en"> 
+      <link href="{{ url_for('static', filename='favicon.ico') }}" rel="icon" type="image/x-icon" />
+      <head>
+            
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Home page</title>
+    </head> 
+    <body>
+    <h1> Home Page </h1>
+    <img src="{{ url_for('static', filename='cat.jpg') }}" alt="Cat"><br>
+    <h2 class="menu">    
+    <a href="about">O MNIE</a>
+    <a href="gallery">GALERIA</a>
+   <h1 class="kontakt"> <a href="contact">KONTAKT</a></h1>
+    
+</h2>
+      <style>
+
+        h1.kontakt{
+              display: block;
+              padding: 10px;
+          }
+body
+{
+background-color: burlywood;
+text-align: center;
+
+}
+h2.menu
+{
+
+
+text-align: center;
+
+
+}
+
+
+
+
+
+      </style>
+    </body> 
+    </html>
