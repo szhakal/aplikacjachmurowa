@@ -1,67 +1,74 @@
-<!DOCTYPE html> <
-    <html lang="en"> 
-    
-    
-    <head>
-    
-        <meta charset="UTF-8">
-    
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>About me</title>
-    
+{% extends "base.html" %}
+{% set active_page = "gallery"-%}
+<body>
+{% block body %}
+{% include "include/menu.html" %}
+<main>  
+    <style>
+        .col-4{
+            margin-bottom: 20px;
+        }
+    </style>
+    <div class="container">
+        <h1>Galeria</h1>
+        <div class="row">
+            <div class="col-4">
+                <a href="{{ url_for('static', filename='img1.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+                    <img src="{{ url_for('static', filename='img1.jpg') }}" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="{{ url_for('static', filename='img2.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+                    <img src="{{ url_for('static', filename='img2.jpg') }}" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="{{ url_for('static', filename='img3.jpg') }}"  data-toggle="lightbox"  data-gallery="my-gallery">
+                    <img src="{{ url_for('static', filename='img3.jpg') }}" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="{{ url_for('static', filename='img4.jpg') }}"  data-toggle="lightbox"  data-gallery="my-gallery">
+                    <img src="{{ url_for('static', filename='img4.jpg') }}" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="{{ url_for('static', filename='img5.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+                    <img src="{{ url_for('static', filename='img5.jpg') }}" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="{{ url_for('static', filename='img6.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+                    <img src="{{ url_for('static', filename='img6.jpg') }}" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="{{ url_for('static', filename='cat.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+                    <img src="{{ url_for('static', filename='cat.jpg') }}" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="{{ url_for('static', filename='cat2.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+                    <img src="{{ url_for('static', filename='cat2.jpg') }}" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="{{ url_for('static', filename='cat3.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+                    <img src="{{ url_for('static', filename='cat3.jpg') }}" class="img-fluid">
+                </a>
+            </div>
+        </div>
 
-</head>
-<style>
-h1.galeria
-{
-font-size: 70px;
-display: block;
-background-color: aquamarine;
-font-style: inherit;
-text-align: center;
-}
-h1.galeria:hover
-{
-font-size: 80px;
-display: block;
-background-color:rgb(71, 218, 169);
-font-style: inherit;
-text-align: center;
-}
+            
+          
+    </div>
+</main>
+<script>  
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
 
-p.zawartosc
-{
-background-color: burlywood;
-text-align: center;
-
-
-
-}
-body
-{
-
-    background-color: burlywood;
-}
-p.powrot
-{
-
-display: block;
-text-align: center;
-font-size: 30px;
-}
-p.powrot:hover
-{
-
-display: block;
-text-align: center;
-font-size: 39px;
-}
-
-
-</style>
-    <body>
-    <h1 class= "galeria">Galeria </h1>
-    <p class="zawartosc">"Oto kilka kotów z naszej galerii </p>
-    <img src="{{ url_for('static', filename='cat.jpg') }}" alt="Cat"><br>                
-    <p class="powrot"> <a href="index.html">Back to Home</a></p> 
-</body>
-    </html>
+{% endblock %}
+  </body>
